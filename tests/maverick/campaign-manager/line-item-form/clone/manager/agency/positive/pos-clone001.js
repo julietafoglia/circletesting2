@@ -64,7 +64,7 @@ testData001.startTime = targetIo.startDate.split(' ')[1];
 testData001.endDate = targetIo.endDate.split(' ')[0];
 testData001.endTime = targetIo.endDate.split(' ')[1];
 
-describe('<SMOKE> {{MAVERICK}} /line-item {clone} @MANAGER >>> ' +
+describe('<UNSTABLE> {{MAVERICK}} /line-item {clone} @MANAGER >>> ' +
     '(+) body - minimum required - agency >>>', function() {
 
     // disable mocha time outs
@@ -92,8 +92,6 @@ describe('<SMOKE> {{MAVERICK}} /line-item {clone} @MANAGER >>> ' +
     });
 
     it('should navigate to copy page', function(done) {
-        advDetsPage.closeLastOuterDiv();
-        advDetsPage.closeOuterDiv();
         advDetsPage.navigate(targetServer, 'advertisers',
             targetAdvertiser.refId);
         advDetsPage.clickIo(targetIo.name);
@@ -107,9 +105,6 @@ describe('<SMOKE> {{MAVERICK}} /line-item {clone} @MANAGER >>> ' +
     });
 
     it('line item should be copied - minimum required', function(done) {
-        lineItemPage.closeLastOuterDiv();
-        lineItemPage.closeOuterDiv();
-        lineItemPage.closeOuterDiv();
         lineItemPage.waitOverlayUntilStale();
         lineItemPage.setName(testData001.name);
         lineItemPage.setBudget(testData001.budget);

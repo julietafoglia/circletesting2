@@ -40,7 +40,7 @@ const targetServer = targetEnvironment.server;
 const driverBuilder = require(rootPath + '/helpers/driver-builder');
 
 // note: removed from SMOKE suite since it fails on jenkins
-describe('{{MAVERICK}} /line-item {UI} @SS-AGENCY-ADVERTISER >>> ' +
+describe('<UNSTABLE> {{MAVERICK}} /line-item {UI} @SS-AGENCY-ADVERTISER >>> ' +
     '(+) verify ui elements - create >>>', function() {
 
     // disable mocha time outs

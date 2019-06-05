@@ -30,7 +30,7 @@ const targetEnvironmentUsers =
 const targetUser = targetEnvironmentUsers.admin;
 
 
-describe('[MAVERICK] inventory manager - publisher {delete} @ADMIN >>> ' +
+describe('<STABLE> {{MAVERICK}} inventory manager - publisher {delete} @ADMIN >>> ' +
     '(+) media-group details page >>>', function() {
 
     // shared test variable(s)

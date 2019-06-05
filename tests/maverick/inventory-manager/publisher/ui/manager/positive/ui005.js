@@ -23,7 +23,7 @@ const entitiesObj = entitiesFile;
 const targetMediaGroup = entitiesObj.manager.mediaGroup001;
 const targetPublisher = targetMediaGroup.publisher001;
 const targetNewsletter = targetPublisher.newsletter001;
-const targetAdSlot = targetNewsletter.adSlot1;
+const targetAdSlot = targetNewsletter.adSlot2;
 
 // maverick runtime variables
 const targetEnvironment =
@@ -37,8 +37,8 @@ const targetUser = targetEnvironmentUsers.admin;
 
 // shared test variable(s)
 let driver;
-let adSlotName = 'Product Listing OCC';
-let adSlotId = 'ID: 273813';
+let adSlotName = targetAdSlot.name;
+let adSlotId = 'ID: ' + targetAdSlot.refId;
 let publisherTitle = 'PUBLISHER';
 let newsletterTitle = 'NEWSLETTER';
 let adslotTitle = 'AD SLOT';
@@ -51,7 +51,7 @@ let lastUpdTitle = 'LAST UPDATED';
 // page objects
 let dashboardPage, loginPage, adSlotDetailsPage;
 
-describe('<SMOKE-PROD> {{MAVERICK}} inventory manager - Ad Slots ' +
+describe('<STABLE> {{MAVERICK}} inventory manager - Ad Slots ' +
     'inventory library >>> (+) basic ui validation >>>', function() {
 
     // disable mocha time outs

@@ -90,7 +90,7 @@ describe('<SMOKE> {{MAVERICK}} /audience-form {create} @MANAGER >>> ' +
         driver.sleep(driverTimeOut).then(() => done());
     });
 
-    xit('audience should be expanded', function(done) {
+    it('audience should be expanded', function(done) {
         sideBar.clickAudiencesLink();
         audLibrary.setInputSearch(audienceName);
         expect(audLibrary.getLinkText(audienceName)).to.exist;

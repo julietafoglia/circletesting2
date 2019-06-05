@@ -10,7 +10,7 @@ const usersTargetEnvironment =
     require(rootPath + '/config/users/' + process.env.NODE_ENV);
 const targetUser = usersTargetEnvironment.platform;
 const driverTimeOut = 0;
-const twoSecTO = 2000;
+const twoSecTO = 2900;
 
 // selenium runtime variables
 let driver; // initialized during test runtime
@@ -31,7 +31,7 @@ const targetEnvironment =
 const targetServer = targetEnvironment.server;
 const driverBuilder = require(rootPath + '/helpers/driver-builder');
 
-describe('<SMOKE-PROD> {{MAVERICK}} /accounts {ui} @MANAGER >>> ' +
+describe('<UNSTABLE> {{MAVERICK}} /accounts {ui} @MANAGER >>> ' +
     '(+) verify ui elements >>>', function() {
 
     // disable mocha time outs
@@ -94,7 +94,7 @@ describe('<SMOKE-PROD> {{MAVERICK}} /accounts {ui} @MANAGER >>> ' +
 
     it('verify exact match of Advertiser Name', function(done) {
         setupPage.setAdvInput('LiveIntent (Placeholder)');
-        driver.sleep(twoSecTO); // waiting for the table to refresh 
+        driver.sleep(twoSecTO); // waiting for the table to refresh
         setupPage.getDivText('LiveIntent (Placeholder)').then(function(text) {
             expect(text).to.exist;
         })

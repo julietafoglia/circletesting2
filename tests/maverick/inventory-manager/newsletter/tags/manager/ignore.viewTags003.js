@@ -34,7 +34,7 @@ const targetEnvironmentUsers =
 const targetUser = targetEnvironmentUsers.admin;
 
 
-describe('[MAVERICK] inventory manager - newsletter {tags} @ADMIN >>> ' +
+describe('<UNSTABLE> {{MAVERICK}} inventory manager - newsletter {tags} @ADMIN >>> ' +
     '(+) view code - newsletter details >>>', function() {
 
     // shared test variable(s)

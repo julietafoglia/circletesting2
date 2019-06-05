@@ -79,7 +79,6 @@ describe('<SMOKE> {{MAVERICK}} /campaign-manager/' +
 
     it('campaign should be edited - minimum required', function(done) {
         advDetsPage.navigate(targetServer, 'advertisers', targetAdv.refId);
-        advDetsPage.closeLastOuterDiv();
         advDetsPage.closeOuterDiv();
         advDetsPage.clickIo(targetIo.name);
         advDetsPage.searchForCampaign(targetCam.name);

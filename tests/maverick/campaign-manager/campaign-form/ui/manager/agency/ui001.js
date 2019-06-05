@@ -75,7 +75,6 @@ describe('{{MAVERICK}} /campaign-manager/campaign-form {ui} @MANAGER >>> ' +
 
     it('should contain all elements for branding - clicks', function(done) {
         advDetsPage.navigate(targetServer, 'advertisers', targetAdv.refId);
-        advDetsPage.closeLastOuterDiv();
         advDetsPage.closeOuterDiv();
         advDetsPage.clickIo(targetIo.name);
         campaignDetailsPage.clickNewCampaign();

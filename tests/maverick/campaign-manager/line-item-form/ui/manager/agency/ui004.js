@@ -66,7 +66,7 @@ const budgetCurrency = (testData001.budget).
     toLocaleString('en-US', {style: 'currency', currency: 'USD'});
 const targetPublisher = 'pkaiTestPub001';
 
-describe('{{MAVERICK}} /line-item {UI} @MANAGER >>> ' +
+describe('<UNSTABLE> {{MAVERICK}} /line-item {UI} @MANAGER >>> ' +
     '(+) verify review page ui elements >>>', function() {
 
     // disable mocha time outs

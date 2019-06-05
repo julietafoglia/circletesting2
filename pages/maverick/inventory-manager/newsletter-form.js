@@ -28,7 +28,13 @@ const ADS_DIFF_SOURCES = By.xpath(
     '//span[text()="Ads must be from different sources"]'
 );
 const ADS_DIFF_ADVS = By.xpath(
-    '//span[text()="Ads should be from different advertisers"]'
+    '//span[text()="Ads must be from different advertisers"]'
+);
+const RADIO_DIRECT_SOLD = By.xpath(
+    '//span[text()="For Exchange, RTB, Direct Sold, and House Demand"]'
+);
+const RADIO_EXCHANGE = By.xpath(
+    '//span[text()="For Exchange and RTB Demand"]'
 );
 const ADS_DIFF_LINEITEMS = By.xpath(
     '//span[text()="Ads should be from different line items"]'
@@ -172,6 +178,20 @@ NewsletterFormPage.prototype.checkDiffAdSources = function(option) {
         this.waitUntilVisible(ADS_DIFF_LINEITEMS);
         this.findElement(ADS_DIFF_LINEITEMS).click();
     }
+    return this;
+};
+
+NewsletterFormPage.prototype.checkDiffAdAdvertisers = function(option) {
+    this.waitUntilVisible(ADS_DIFF_ADVS);
+    this.findElement(ADS_DIFF_ADVS).click();
+    this.waitUntilVisible(RADIO_DIRECT_SOLD);
+    this.waitUntilVisible(RADIO_EXCHANGE);
+    return this;
+};
+
+NewsletterFormPage.prototype.clickRadioDirectSoldandHouse = function() {
+    this.waitUntilVisible(RADIO_DIRECT_SOLD);
+    this.click(RADIO_DIRECT_SOLD);
     return this;
 };
 

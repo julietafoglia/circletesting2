@@ -34,7 +34,7 @@ const targetEnvironment =
 const targetServer = targetEnvironment.server;
 const driverBuilder = require(rootPath + '/helpers/driver-builder');
 
-describe('<SMOKE-PROD> {{MAVERICK}} /forecasting {UI} @MANAGER >>> ' +
+describe('<STABLE> {{MAVERICK}} /forecasting {UI} @MANAGER >>> ' +
     '(+) verify ui elements >>>', function() {
 
     // disable mocha time outs
@@ -60,8 +60,7 @@ describe('<SMOKE-PROD> {{MAVERICK}} /forecasting {UI} @MANAGER >>> ' +
     });
 
     it('should check forecasting details elements', function(done) {
-        navBarPage.clickInventoryManager();
-        navBarPage.closeLastOuterDiv();
+        navBarPage.clickReportingTab();
         navBarPage.closeOuterDiv();
         sideBarPage.clickForecastingLink();
 

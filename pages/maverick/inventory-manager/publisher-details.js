@@ -106,10 +106,11 @@ PublisherDetailsPage.prototype.searchNewsletter = function(name) {
     this.driver.sleep(twoSecTimeOut);
     this.waitUntilVisible(SEARCH_BOX);
     this.findElement(SEARCH_BOX).clear();
-    this.driver.actions()
+    this.findElement(SEARCH_BOX).sendKeys(name);
+    /*this.driver.actions()
         .mouseMove(this.findElement(SEARCH_BOX))
         .sendKeys(name)
-        .perform();
+        .perform();*/
     return this.driver.sleep(twoSecTimeOut);
 };
 
@@ -238,6 +239,7 @@ PublisherDetailsPage.prototype.getNewsletterCardName = function(name) {
 
 PublisherDetailsPage.prototype.openNewsletter = function(name) {
     this.searchNewsletter(name);
+    this.waitUntilVisible(NEWSLETTER_LINK(name));
     this.findElement(NEWSLETTER_LINK(name)).click();
     this.driver.sleep(fiveSecTO);
     return this.getH1Title(name);
@@ -269,6 +271,7 @@ PublisherDetailsPage.prototype.getPublisherId = function() {
 };
 
 PublisherDetailsPage.prototype.getPrimaryIabCategory = function() {
+    this.waitUntilVisible(IAB_CATEGORY);
     return this.getElementText(IAB_CATEGORY);
 };
 

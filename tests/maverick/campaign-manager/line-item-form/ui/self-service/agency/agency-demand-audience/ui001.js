@@ -37,7 +37,7 @@ const targetEnvironment =
 const targetServer = targetEnvironment.server;
 const driverBuilder = require(rootPath + '/helpers/driver-builder');
 
-describe('{{MAVERICK}} /line-item {UI} @SS-AGENCY >>> ' +
+describe('<UNSTABLE> {{MAVERICK}} /line-item {UI} @SS-AGENCY >>> ' +
     '(+) verify ui elements - create >>>', function() {
 
     // disable mocha time outs

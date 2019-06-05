@@ -49,7 +49,7 @@ const targetUser = targetEnvironmentUsers.admin;
 let url = targetServer + targetEndpoint.inventoryDashboard;
 
 
-describe('[MAVERICK] inventory manager - publisher {delete} @ADMIN >>> ' +
+describe('<STABLE> {{MAVERICK}} inventory manager - publisher {delete} @ADMIN >>> ' +
     '(+) publisher details page >>>', function() {
 
     // disable mocha time outs

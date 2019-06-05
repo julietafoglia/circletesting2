@@ -61,7 +61,7 @@ testData002.budget = (testData002.budget).
     toLocaleString('en-US', {style: 'currency', currency: 'USD'});
 const targetCampaign2Budget = ' ' + testData002.budget;
 
-describe('{{MAVERICK}} /line-item {UI} @MANAGER >>> ' +
+describe('<UNSTABLE> {{MAVERICK}} /line-item {UI} @MANAGER >>> ' +
     '(+) verify budget when cloning >>>', function() {
 
     // disable mocha time outs

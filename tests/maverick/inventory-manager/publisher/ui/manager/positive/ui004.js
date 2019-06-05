@@ -36,8 +36,8 @@ const targetNewsletter = targetPublisher.newsletter001;
 
 // shared test variable(s)
 let driver;
-let newsletterName = 'initest NATIVE ACTIVATION';
-let newsletterId = 'ID: 19866';
+let newsletterName = 'test newsletter';
+let newsletterId = 'ID: 25312';
 let publisherTitle = 'PUBLISHER';
 let newsletterTitle = 'NEWSLETTER';
 let adslotsTitle = '# OF AD SLOTS';
@@ -47,7 +47,7 @@ let lastUpdTitle = 'LAST UPDATED';
 // page objects
 let dashboardPage, loginPage, newsletterDetailsPage;
 
-describe('<SMOKE-PROD> {{MAVERICK}} inventory manager - Newsletter ' +
+describe('<STABLE> {{MAVERICK}} inventory manager - Newsletter ' +
     'inventory library >>> (+) basic ui validation >>>', function() {
 
     // disable mocha time outs
@@ -109,7 +109,8 @@ describe('<SMOKE-PROD> {{MAVERICK}} inventory manager - Newsletter ' +
     });
 
     it('should show expected element after filtering table', function(done) {
-        dashboardPage.setSearchField(newsletterName);
+        dashboardPage.setSearchField(newsletterId.split(' ')[1]);
+        dashboardPage.waitUntilFilterNotVisible();
         dashboardPage.waitUntilFilterNotVisible();
         expect(dashboardPage.getFirstTableName()).to.exist;
         dashboardPage.getFirstTableName().getText().
@@ -295,7 +296,7 @@ describe('<SMOKE-PROD> {{MAVERICK}} inventory manager - Newsletter ' +
     });
 
     it('should access Newsletter detail page', function(done) {
-        dashboardPage.setSearchField(newsletterName);
+        dashboardPage.setSearchField(newsletterId.split(' ')[1]);
         dashboardPage.waitUntilFilterNotVisible();
         expect(dashboardPage.getFirstTableName()).to.exist;
         expect(dashboardPage.getFirstTableRow()).to.exist;

@@ -42,7 +42,7 @@ const targetServer = targetEnvironment.server;
 const driverBuilder = require(rootPath + '/helpers/driver-builder');
 
 
-describe('{{MAVERICK}} /line-item {UI} @SS-AGENCY >>> ' +
+describe('<STABLE> {{MAVERICK}} /line-item {UI} @SS-AGENCY >>> ' +
     '(+) verify daily cap ui elements >>>', function() {
 
     // disable mocha time outs

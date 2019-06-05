@@ -484,7 +484,7 @@ BasePage.prototype.closeLastOuterDiv = function() {
             })
             .catch(err=>[err]);
     }, this.driver.controlFlow());
- };
+};
 
 BasePage.prototype.getDateTimeFromData = function(time) {
     if (time.split(':')[0] >= 12) {

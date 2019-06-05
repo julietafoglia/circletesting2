@@ -29,7 +29,7 @@ const targetEnvironmentUsers =
     require(rootPath + '/config/users/' + process.env.NODE_ENV);
 const targetUser = targetEnvironmentUsers.admin;
 
-describe('[MAVERICK] inventory manager - publisher {create} @ADMIN >>> ' +
+describe('<STABLE> {{MAVERICK}} inventory manager - publisher {create} @ADMIN >>> ' +
     '(+) advanced settings - demand blocking >>>', function() {
 
     // shared test variable(s)

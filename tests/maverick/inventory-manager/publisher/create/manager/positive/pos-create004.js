@@ -49,7 +49,7 @@ publisher.name += timeStamp + 'underMG';
 publisherFixture['managerName'] = 'QA-All user';
 publisherFixture['executiveName'] = 'QA-All user';
 
-describe('{{MAVERICK}} internal tools - publisher {create} @ADMIN >>> ' +
+describe('<STABLE> {{MAVERICK}} inventory manager - publisher {create} @ADMIN >>> ' +
     '(+) basic required fields under media group account >>>', function() {
     // disable mocha time outs
     this.timeout(mochaTimeOut);

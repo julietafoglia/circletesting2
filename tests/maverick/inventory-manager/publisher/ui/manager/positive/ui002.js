@@ -26,7 +26,6 @@ const targetUser = targetEnvironmentUsers.admin;
 
 // shared test variable(s)
 let driver;
-let publisherName = 'initest NATIVE PUB';
 let pubTitle = 'PUBLISHER';
 let mediaGroupTitle = 'MEDIA GROUP';
 let newsletterTitle = '# OF NEWSLETTERS';
@@ -44,7 +43,8 @@ let publisherFixture = Object.assign(
 publisherFixture['managerName'] = 'QA-All user';
 publisherFixture['executiveName'] = 'QA-All user';
 
-describe('<SMOKI> {{MAVERICK}} inventory manager - inventory Publisher' +
+//bug
+describe('<STABLE> {{MAVERICK}} inventory manager - inventory Publisher' +
     ' >>> (+) basic ui validation >>>', function() {
 
     // disable mocha time outs
@@ -71,16 +71,24 @@ describe('<SMOKI> {{MAVERICK}} inventory manager - inventory Publisher' +
         dashboardPage.goto(url);
         dashboardPage.waitUntilSpinnerNotVisible();
         expect(dashboardPage.getCreatePublisherButton()).to.exist;
+        dashboardPage.waitUntilFilterNotVisible();
         driver.sleep(driverTimeOut).then(() => done());
     });
 
     it('should show expected element after filtering table', function(done) {
-        dashboardPage.setSearchField(publisherName);
-        dashboardPage.waitUntilFilterNotVisible();
+        dashboardPage.selectFromSelectedAccounts();
+        dashboardPage.waitUntilLoadingNotVisible();
         expect(dashboardPage.getFirstTableName()).to.exist;
         dashboardPage.getFirstTableName().getText().
-            then(function(getText) {
-                expect(getText).to.include(publisherName);
+            then(function(getFirstText) {
+                dashboardPage.setSearchField(getFirstText);
+                dashboardPage.waitUntilLoadingNotVisible();
+                dashboardPage.waitUntilLoadingNotVisible();
+                dashboardPage.waitUntilFilterNotVisible();
+                dashboardPage.getFirstTableName().getText().
+                    then(function(getText) {
+                        expect(getText).to.include(getFirstText);
+                    });
             });
         expect(dashboardPage.getFirstTableRow()).to.exist;
         driver.sleep(driverTimeOut).then(() => done());

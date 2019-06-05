@@ -51,7 +51,7 @@ const targetEnvironment =
 const targetServer = targetEnvironment.server;
 const driverBuilder = require(rootPath + '/helpers/driver-builder');
 
-describe('<SMOKI> {{MAVERICK}} /users-library {UI} @MANAGER >>> ' +
+describe('<SMOKE-PROD> {{MAVERICK}} /users-library {UI} @MANAGER >>> ' +
     '(-) verify negative cases for users library ui elements >>>', function() {
 
     // disable mocha time outs
@@ -73,10 +73,6 @@ describe('<SMOKI> {{MAVERICK}} /users-library {UI} @MANAGER >>> ' +
 
     it('should navigate to Internal Tools section', function(done) {
         loginPage.login(targetServer, targetUser);
-        navBar.closeLastOuterDiv();
-        navBar.closeLastOuterDiv();
-        navBar.closeOuterDiv();
-        navBar.closeOuterDiv();
         navBar.clickInternalTools();
         expect(usersLibrary.getTitleUsers()).to.exist;
         usersLibrary.getTitleUsers().getText().

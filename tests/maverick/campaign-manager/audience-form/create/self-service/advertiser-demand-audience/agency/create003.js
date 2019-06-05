@@ -67,6 +67,8 @@ describe('{{MAVERICK}} /audience-form {create} @SS-AGENCY >>> ' +
     });
 
     it('it should navigate to audiences page', function(done) {
+        sideBar.closeOuterDiv();
+        sideBar.closeOuterDiv();
         sideBar.clickAudiencesLink();
         audLibrary.clickNewAudience();
         audCards.clickAddToSegment();

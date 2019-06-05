@@ -30,7 +30,7 @@ const targetEnvironmentUsers =
 const targetUser = targetEnvironmentUsers.admin;
 
 
-describe('[MAVERICK] inventory manager - publisher {create} @ADMIN >>> ' +
+describe('<STABLE> {{MAVERICK}} inventory manager - publisher {create} @ADMIN >>> ' +
     '(+) basic required fields >>>', function() {
 
     // shared test variable(s)

@@ -59,7 +59,7 @@ testData001.status = 'Paused';
 testData001.startDate = timeToday;
 testData001.endDate = moment().add(30, 'days').format('MM-DD-YYYY');
 
-describe('{{MAVERICK}} /line-item {edit} @SS-AGENCY >>> ' +
+describe('<UNSTABLE> {{MAVERICK}} /line-item {edit} @SS-AGENCY >>> ' +
     '(+) body - minimum required - media group >>>', function() {
 
     // disable mocha time outs

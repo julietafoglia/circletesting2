@@ -38,7 +38,7 @@ const targetEnvironment =
 const targetServer = targetEnvironment.server;
 const driverBuilder = require(rootPath + '/helpers/driver-builder');
 
-describe('<SMOKE-PROD> {{MAVERICK}} /campaign-manager/' +
+describe('<UNSTABLE> {{MAVERICK}} /campaign-manager/' +
     'global-search-dropdown {ui} @MANAGER >>> ' +
     '(+) verify ui elements for inventory manager entities >>>', function() {
 

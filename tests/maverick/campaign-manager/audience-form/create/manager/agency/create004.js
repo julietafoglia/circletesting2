@@ -52,7 +52,7 @@ const testFixture = require(rootPath + '/fixtures/common/audience/create001');
 let testData002 = Object.assign({}, testFixture);
 const audienceName = testData002.name + timeStamp;
 
-describe('<SMOKE> {{MAVERICK}} /audience-form {create} @MANAGER >>> ' +
+describe('<UNSTABLE> {{MAVERICK}} /audience-form {create} @MANAGER >>> ' +
     '(+) create Event based audience >>>', function() {
 
     // disable mocha time outs
@@ -98,7 +98,7 @@ describe('<SMOKE> {{MAVERICK}} /audience-form {create} @MANAGER >>> ' +
         driver.sleep(driverTimeOut).then(() => done());
     });
 
-    xit('audience should be created', function(done) {
+    it('audience should be created', function(done) {
         audLibrary.setInputSearch(audienceName);
         expect(audLibrary.getLinkText(audienceName)).to.exist;
         driver.sleep(driverTimeOut).then(() => done());

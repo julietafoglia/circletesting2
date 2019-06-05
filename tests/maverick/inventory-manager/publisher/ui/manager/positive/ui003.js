@@ -28,8 +28,8 @@ const targetUser = targetEnvironmentUsers.admin;
 
 // shared test variable(s)
 let driver;
-let mediaGroupName = 'LiveIntentQATestMediaGroup';
-let mediaGroupId = 'ID: 860';
+let mediaGroupName = 'iniTestMediaGroupNewLook';
+let mediaGroupId = 'ID: 2967';
 let mediagroupTitle = 'MEDIA GROUP';
 let acManagerTitle = 'ACC. MANAGER';
 let acExecutiveTitle = 'ACC. EXECUTIVE';
@@ -40,7 +40,7 @@ let lastUpdTitle = 'LAST UPDATED';
 // page objects
 let dashboardPage, loginPage, mediaGroupDetailsPage;
 
-describe('<SMOKI> {{MAVERICK}} inventory manager - Media group' +
+describe('<STABLE> {{MAVERICK}} inventory manager - Media group' +
     ' inventory library >>> (+) basic ui validation >>>', function() {
 
     // disable mocha time outs
@@ -107,12 +107,14 @@ describe('<SMOKI> {{MAVERICK}} inventory manager - Media group' +
     });
 
     it('should show expected element after filtering table', function(done) {
-        dashboardPage.setSearchField(mediaGroupName);
-        dashboardPage.waitUntilFilterNotVisible();
-        expect(dashboardPage.getFirstTableName()).to.exist;
         dashboardPage.getFirstTableName().getText().
-            then(function(getText) {
-                expect(getText).to.include(mediaGroupName);
+            then(function(getFirstText) {
+                dashboardPage.setSearchField(getFirstText);
+                dashboardPage.waitUntilFilterNotVisible();
+                dashboardPage.getFirstTableName().getText().
+                    then(function(getText) {
+                        expect(getText).to.include(getFirstText);
+                    });
             });
         expect(dashboardPage.getFirstTableRow()).to.exist;
         expect(dashboardPage.getFirstColumnTitle()).to.exist;

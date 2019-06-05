@@ -74,6 +74,8 @@ describe('{{MAVERICK}} /audience-form {UI} @MANAGER >>> ' +
     });
 
     it('it should navigate to URL based audience page', function(done) {
+        sideBar.closeLastOuterDiv();
+        sideBar.closeOuterDiv();
         sideBar.clickAudiencesLink();
         audLibrary.clickNewAudience();
         audCards.clickUrlAudience();

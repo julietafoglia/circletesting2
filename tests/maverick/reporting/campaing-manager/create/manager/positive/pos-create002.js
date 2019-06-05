@@ -39,7 +39,7 @@ const targetServer = targetEnvironment.server;
 
 const driverBuilder = require(rootPath + '/helpers/driver-builder');
 
-describe('<SMOKE> {{MAVERICK}} /reporting {UI} @MANAGER >>> ' +
+describe('<SMOKE> {{MAVERICK}} /reporting {create} @MANAGER >>> ' +
     '(+) create LiveAudience 360 Scheduled report >>>', function() {
 
     // disable mocha time outs
@@ -60,8 +60,6 @@ describe('<SMOKE> {{MAVERICK}} /reporting {UI} @MANAGER >>> ' +
 
     it('should access reports section and open create modal', function(done) {
         loginPage.login(targetServer, targetUser);
-        navBar.closeLastOuterDiv();
-        navBar.closeOuterDiv();
         navBar.clickReportingTab();
         reportsPage.waitUntilSpinnerNotPresent();
         reportsPage.clickNewReport();

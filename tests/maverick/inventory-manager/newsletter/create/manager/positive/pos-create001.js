@@ -85,8 +85,6 @@ describe('<SMOKE> {{MAVERICK}} inventory manager - newsletter' +
         let url = targetServer + util.format(
             targetEndpoint.publisherDetails, publisher.refId
         );
-        publisherDetailsPage.closeLastOuterDiv();
-        publisherDetailsPage.closeOuterDiv();
         publisherDetailsPage
             .goto(url)
             .clickCreateNewsletterBtn()
@@ -106,7 +104,8 @@ describe('<SMOKE> {{MAVERICK}} inventory manager - newsletter' +
             .pickIabCategory(newsletterFixture.iabCategory)
             .uncheckAllowExchange()
             .clickAdvancedSettings()
-            .checkDiffAdSources(newsletterFixture.diffAdSources)
+            .checkDiffAdAdvertisers()
+            .clickRadioDirectSoldandHouse()
             .clickCreateBtn()
             .then(() => {
                 done();

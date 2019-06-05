@@ -48,7 +48,7 @@ const driverBuilder = require(rootPath + '/helpers/driver-builder');
 const testFile = rootPath + '/fixtures/common/creative/bulk-tag-upload.xlsx';
 const fileName = testFile.split('/')[4];
 
-describe('{{MAVERICK}} /line-item {UI} @SS-AGENCY-ADVERTISER >>> ' +
+describe('<UNSTABLE> {{MAVERICK}} /line-item {UI} @SS-AGENCY-ADVERTISER >>> ' +
     '(+) verify ui elements - ad builder >>>', function() {
 
     // disable mocha time outs

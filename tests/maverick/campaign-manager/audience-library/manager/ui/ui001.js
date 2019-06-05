@@ -31,7 +31,7 @@ const targetEnvironment =
 const targetServer = targetEnvironment.server;
 const driverBuilder = require(rootPath + '/helpers/driver-builder');
 
-describe('<> {{MAVERICK}} /audience-library {UI} @MANAGER >>> ' +
+describe('<UNSTABLE> {{MAVERICK}} /audience-library {UI} @MANAGER >>> ' +
     '(+) verify audience library ui elements >>>', function() {
 
     // disable mocha time outs
@@ -59,7 +59,7 @@ describe('<> {{MAVERICK}} /audience-library {UI} @MANAGER >>> ' +
         sideBar.closeLastOuterDiv();
         sideBar.closeOuterDiv();
         sideBar.clickAudiencesLink();
-        // audiencesLibrary.waitUntilFilterNotVisible();
+        audiencesLibrary.waitUntilFilterNotVisible();
         driver.sleep(driverTimeOut).then(() => done());
     });
 

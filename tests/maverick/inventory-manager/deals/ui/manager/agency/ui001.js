@@ -61,7 +61,6 @@ describe('<SMOKE-PROD> {{MAVERICK}} /deals {UI} @MANAGER >>> ' +
 
     it('should check deals details elements', function(done) {
         navBarPage.clickInventoryManager();
-        navBar.closeLastOuterDiv();
         navBarPage.closeOuterDiv();
         sideBarPage.clickDealsLink();
         expect(dealsDetailsPage.getButtonCreateDeal()).to.exist;

@@ -33,10 +33,10 @@ let driver;
 let title = 'Inventory Manager';
 let mediaGroupTitle = 'MEDIA GROUP';
 let pubTitle = 'PUBLISHER';
-let publisherName = 'initest NATIVE PUB';
-let publisherId = 'ID: 35489';
+let publisherName = 'test publisher PB/AC';
+let publisherId = 'ID: 47079';
 let tierNumber = '3';
-let mediaGroupRefId = '860';
+let mediaGroupRefId = '2967';
 let sspFee = '5';
 let allowOption = 'Block';
 let newsletterTitle = '# OF NEWSLETTERS';
@@ -54,7 +54,7 @@ let publisherFixture = Object.assign(
 publisherFixture['managerName'] = 'QA-All user';
 publisherFixture['executiveName'] = 'QA-All user';
 
-describe('<SMOKI> {{MAVERICK}} inventory manager - inventory library' +
+describe('<SMOKE-PROD> {{MAVERICK}} inventory manager - inventory library' +
     ' Publisher Create Detail Page >>> (+) basic ui validation >>>',
 function() {
 
@@ -83,7 +83,6 @@ function() {
         let url = targetServer + targetEndpoint.inventoryDashboard;
         dashboardPage.goto(url);
         dashboardPage.waitUntilSpinnerNotVisible();
-        dashboardPage.closeLastOuterDiv();
         dashboardPage.closeOuterDiv();
         expect(dashboardPage.getCreatePublisherButton()).to.exist;
         driver.sleep(driverTimeOut).then(() => done());

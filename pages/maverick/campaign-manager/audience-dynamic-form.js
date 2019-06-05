@@ -16,7 +16,7 @@ const TEXT_AUDIENCE_MEMBERS = By.xpath('//span[text() = "Include people that' +
 const BUTTON_VISITED_PAGE = By.css('select-dropdown[name="operator"]' +
     ' div button');
 const BUTTON_RULE = By.xpath('//regex-rule/div/select-dropdown/div/button');
-const INPUT_RULE = By.css('input[name="input"]');
+const INPUT_RULE = By.css('input.tags-new-tag');
 const BUTTON_PIXEL = By.css('switch[name="enablePixel"]');
 const INPUT_MEMBER_LIFETIME = By.css('input[name="ttlInDays"]');
 const TEXT_MEMBER_LIFETIME = By.xpath('//span[text() = "Enter the number' +

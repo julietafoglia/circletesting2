@@ -30,7 +30,7 @@ const targetEnvironmentUsers =
 const targetUser = targetEnvironmentUsers.admin;
 
 
-describe('{{MAVERICK}} inventory manager - newsletter' +
+describe('<STABLE> {{MAVERICK}} inventory manager - newsletter' +
     ' {edit} @ADMIN >>> (+) publisher details page >>>', function() {
 
     // shared test variable(s)
@@ -99,7 +99,8 @@ describe('{{MAVERICK}} inventory manager - newsletter' +
             .enterNewsletterName(newsletterFixture.name)
             .pickIabCategory(newsletterFixture.iabCategory)
             .clickAdvancedSettings()
-            .checkDiffAdSources(newsletterFixture.diffAdSources)
+            .checkDiffAdAdvertisers()
+            .clickRadioDirectSoldandHouse()
             .clickCreateBtn()
             .then(() => {
                 done();

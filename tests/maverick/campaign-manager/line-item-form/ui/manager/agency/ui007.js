@@ -49,7 +49,7 @@ const targetServer = targetEnvironment.server;
 const driverBuilder = require(rootPath + '/helpers/driver-builder');
 
 
-describe('{{MAVERICK}} /line-item {UI} @MANAGER >>> ' +
+describe('<UNSTABLE> {{MAVERICK}} /line-item {UI} @MANAGER >>> ' +
     '(+) verify ui elements - clone >>>', function() {
 
     // disable mocha time outs

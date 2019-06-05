@@ -31,6 +31,7 @@ const NEXT_CONTROL_BUTTON = By.xpath('//button[text() = "Next"]');
 const LAST_CONTROL_BUTTON = By.xpath('//button[text() = "Last"]');
 const FIRST_TABLE_ROW = By.css('table tbody > tr');
 const TABLE_FIRST_NAME = By.css('.overflow');
+const LOADING = By.css('.loading-indicator');
 
 const FIRST_COLUMN_TITLE = By.css('div .data table thead tr > ' +
     'th:nth-child(1)');
@@ -113,8 +114,24 @@ DashboardPage.prototype.getFirstTableName = function() {
     return this.getElement(TABLE_FIRST_NAME);
 };
 
+DashboardPage.prototype.getLastTableName = function() {
+    return this.getLastElement(TABLE_FIRST_NAME);
+};
+
+DashboardPage.prototype.waitUntilLoadingNotVisible = function(){
+    this.driver.sleep(10000);
+    return this.driver.findElements(LOADING).then((elements) => {
+        if (elements.length) {
+            this.waitUntilStale(LOADING);
+        }
+    }, (err) => {
+        throw err;
+    });
+};
+
 DashboardPage.prototype.getRemoveFilterOption = function(){
-    return this.getElement(FILTER_OPTION_REMOVE);
+    this.getElement(FILTER_OPTION_REMOVE);
+    return this.waitUntilLoadingNotVisible();
 };
 
 DashboardPage.prototype.noRemoveFilterOptionDisplayed = function() {

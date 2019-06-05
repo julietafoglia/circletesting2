@@ -61,7 +61,7 @@ testData001.budget = 100;
 const budgetCurrency = (testData001.budget).
     toLocaleString('en-US', {style: 'currency', currency: 'USD'});
 
-describe('{{MAVERICK}} /line-item {UI} @SS-AGENCY >>> ' +
+describe('<UNSTABLE> {{MAVERICK}} /line-item {UI} @SS-AGENCY >>> ' +
     '(+) verify review page ui elements >>>', function() {
 
     // disable mocha time outs
