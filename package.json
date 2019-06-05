@@ -50,7 +50,7 @@
   },
   "scripts": {
     "pretest": "gulp setup --env=${NODE_ENV}",
-    "test": "env SELENIUM_BROWSER=jenkinsChrome JUNIT_REPORT_PATH=${ROOT_PATH}/results/maverick/report-smoke.xml NODE_ENV=${NODE_ENV} ROOT_PATH=${ROOT_PATH} ./node_modules/.bin/mocha-parallel-tests tests/maverick/inventory-manager/**/*.js --grep \"<STABLE>\" --max-parallel 2 --reporter mocha-jenkins-reporter",
+    "test": "env SELENIUM_BROWSER=jenkinsChrome JUNIT_REPORT_PATH=${ROOT_PATH}/results/maverick/report-smoke.xml NODE_ENV=${NODE_ENV} ROOT_PATH=${ROOT_PATH} ./node_modules/.bin/mocha-parallel-tests tests/maverick/inventory-manager/**/*.js --grep \"<STABLE>\" --max-parallel 2 --reporter mocha-circleci-reporter",
     "posttest": "gulp teardown --env=${NODE_ENV}"
   }
 }
